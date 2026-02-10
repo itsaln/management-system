@@ -1,0 +1,56 @@
+@use 'constants';
+
+:root {
+  --white: #FFF;
+  --white-25: rgba(255, 255, 255, .25);
+  --black: #222;
+  --black-25: rgba(0, 0, 0, .25);
+  --primary: #2845D6;
+  --warning: #FF8800;
+  --danger: #FF4400;
+  --success: #00CC52;
+
+  --font-montserrat: var(--font-montserrat), sans-serif;
+  --font-montserrat-alternates: var(--font-montserrat-alternates), sans-serif;
+
+  --text-size-xs: 12px;
+  --text-height-xs: 15px;
+  --text-size-sm: 13px;
+  --text-height-sm: 16px;
+  --text-size-base: 14px;
+  --text-height-base: 19px;
+  --text-size-lg: 16px;
+  --text-height-lg: 20px;
+  --text-size-xl: 18px;
+  --text-height-xl: 22px;
+  --text-size-2xl: 22px;
+  --text-height-2xl: 29px;
+  --text-size-3xl: 32px;
+  --text-height-3xl: 39px;
+  --text-size-4xl: 46px;
+  --text-height-4xl: 56px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--white);
+    --foreground: var(--black);
+    --backdrop: var(--black-25);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--black);
+    --foreground: var(--white);
+    --backdrop: var(--white-25);
+  }
+}
