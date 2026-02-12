@@ -20,14 +20,14 @@ export async function middleware(req: NextRequest) {
 		data: { user }
 	} = await supabase.auth.getUser()
 
-	const isAuthPage = req.nextUrl.pathname.startsWith('/login')
+	const isAuthPage = req.nextUrl.pathname.startsWith('/auth')
 	const isProtectedPage =
 		req.nextUrl.pathname.startsWith('/dashboard') ||
 		req.nextUrl.pathname.startsWith('/orders') ||
 		req.nextUrl.pathname.startsWith('/invoices')
 
 	if (!user && isProtectedPage) {
-		return NextResponse.redirect(new URL('/login', req.url))
+		return NextResponse.redirect(new URL('/auth', req.url))
 	}
 
 	if (user && isAuthPage) {
@@ -38,5 +38,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-	matcher: ['/dashboard/:path*', '/orders/:path*', '/invoices/:path*', '/login']
+	matcher: ['/dashboard/:path*', '/orders/:path*', '/invoices/:path*', '/auth']
 }

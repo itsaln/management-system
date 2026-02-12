@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Montserrat, Montserrat_Alternates } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
+import { ProgressBarProvider } from '@/providers/ProgressBarProvider'
+import { ToastProvider } from '@/providers/ToastProvider'
 import { Layout } from '@/components/layout'
 
 import './styles/globals.scss'
@@ -33,8 +35,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 	return (
 		<html lang='en'>
 			<body className={`${montserrat.variable} ${montserrat_alternates.variable}`}>
+				<ProgressBarProvider />
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 					<Layout>{children}</Layout>
+					<ToastProvider />
 				</ThemeProvider>
 			</body>
 		</html>

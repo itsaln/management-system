@@ -1,6 +1,6 @@
 export default function Home() {
 	return (
-		<div>
+		<div className='container'>
 			<h1 className='text-primary'>Home</h1>
 		</div>
 	)

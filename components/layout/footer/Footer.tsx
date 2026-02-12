@@ -1,5 +1,9 @@
 export const Footer = () => {
 	return (
-		<footer>Footer</footer>
+		<footer className='py-md'>
+			<div className='container'>
+				Footer
+			</div>
+		</footer>
 	)
 }
