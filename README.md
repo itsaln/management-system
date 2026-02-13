@@ -27,6 +27,7 @@
 2. Run SQL scripts from /supabase folder
 3. Add env variables:
 
+NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 

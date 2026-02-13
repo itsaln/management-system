@@ -25,11 +25,10 @@ const eslintConfig = defineConfig([
               '^@\\w',
               '^@?\\w',
               // '^@/assets(/.*|$)',
-              '^@/data(/.*|$)',
-              '^@/db(/.*|$)',
               '^@/lib(/.*|$)',
-              '^@/types(/.*|$)',
               '^@/providers(/.*|$)',
+              '^@/types(/.*|$)',
+              '^@/store(/.*|$)',
               '^@/components(/.*|$)',
               '^',
               '^\\.'

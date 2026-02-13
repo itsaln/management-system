@@ -17,7 +17,6 @@ export async function GET(request: Request) {
 		console.error('Auth callback error:', error.message)
 		return NextResponse.redirect(`${origin}/auth`)
 	}
-
-	// после подтверждения ведём в dashboard
+	
 	return NextResponse.redirect(`${origin}/dashboard`)
 }
