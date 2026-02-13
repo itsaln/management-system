@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { getUser } from '@/lib/supabase/getUser'
 import { LogoutButton } from '@/components/ui-elements/LogoutButton'
+import { OrdersGrid } from './OrdersGrid'
 
 export default async function OrdersPage() {
 	const user = await getUser()
@@ -13,8 +14,8 @@ export default async function OrdersPage() {
 					<h1 className='text-2xl font-bold'>Orders</h1>
 					<LogoutButton />
 				</div>
-
-				{/*OrdersGrid*/}
+				
+				<OrdersGrid />
 			</div>
 		</div>
 	)
