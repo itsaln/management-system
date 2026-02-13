@@ -1,4 +1,4 @@
-import { type NextRequest,NextResponse } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 
 export async function middleware(req: NextRequest) {
@@ -27,11 +27,13 @@ export async function middleware(req: NextRequest) {
 		req.nextUrl.pathname.startsWith('/invoices')
 
 	if (!user && isProtectedPage) {
-		return NextResponse.redirect(new URL('/auth', req.url))
+		res.headers.set('Location', new URL('/auth', req.url).toString())
+		return res
 	}
 
 	if (user && isAuthPage) {
-		return NextResponse.redirect(new URL('/dashboard', req.url))
+		res.headers.set('Location', new URL('/dashboard', req.url).toString())
+		return res
 	}
 
 	return res
